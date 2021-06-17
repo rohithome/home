@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/img/favicon.ico">
+
+    <title>Home Automation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/css/footer.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../static/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+
+  </head>
+
+  <script>
+    $(
+      function()
+      {
+        $('#flip_led1').change(function()
+          {
+            $.getJSON('/_led1', {state_led1:$('#flip_led1').val()});
+          }
+      );
+      }
+    );
+    $(
+      function()
+      {
+        $('#flip_led2').change(function()
+          {
+            $.getJSON('/_led2', {state_led2:$('#flip_led2').val()});
+          }
+        );
+      }
+    );
+    $(
+      function()
+      {
+        $('#flip_led3').change(function()
+          {
+            $.getJSON('/_led3', {state_led3:$('#flip_led3').val()});
+          }
+      );
+      }
+    );
+
+  </script>
+
+  <body>
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="{{ url_for('home')}}">Rohit Tamboli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5 text-center">Welcome to Home Automation</h1>
+      <p class="lead text-center">Click on any button to switch ON/OFF the LED</p>
+      <div class="form-group">
+    &nbsp;
+  </div>
+
+        <div class="row">
+          <div class="col-sm-4 text-center">
+            <form>
+                <p>LED 1</p>
+                <select name="flip_led1" id="flip_led1" data-role="slider">
+                    <option value="off"> OFF </option>
+                    <option value="on"> ON </option>
+                </select>
+            </form>
+          </div>
+          <div class="col-sm-4 text-center">
+            <form>
+                <p>LED 2</p>
+                <select name="flip_led2" id="flip_led2" data-role="slider">
+                    <option value="off"> OFF </option>
+                    <option value="on"> ON </option>
+                </select>
+            </form>
+          </div>
+          <div class="col-sm-4 text-center">
+            <form>
+                <p>LED 3</p>
+                <select name="flip_led3" id="flip_led3" data-role="slider">
+                    <option value="off"> OFF </option>
+                    <option value="on"> ON </option>
+                </select>
+            </form>
+          </div>
+        </div>
+
+        <!--
+        <div class="row">
+          <div class="col-sm-4 text-center">
+            <input id='led1hidden'  type='hidden' value='0' name='led1'>
+            <input type="checkbox" checked data-toggle="toggle" name="led1" id="led1" data-style="ios" value="1" checked>
+            <label>LED 1</label>
+          </div>
+          <div class="col-sm-4 text-center">
+            <input type="checkbox" checked data-toggle="toggle" name="led2" data-style="ios">
+            <label>LED 2</label>
+          </div>
+          <div class="col-sm-4 text-center">
+            <input type="checkbox" checked data-toggle="toggle" name="led3" data-style="ios">
+            <label>LED 3</label>
+          </div>
+        </div> -->
+
+</div>
+    <footer class="footer">
+      <div class="container">
+        <div class="text-center">
+          <!--
+         <a href="https://www.facebook.com/rohit.tamboli"><img src="../static/img/fb.jpg" alt="Faceboof"></a>
+         <a href="https://www.instagram.com/rohit1253"><img src="../static/img/insta.jpg" alt="Instagram"></a>
+         <a href="https://www.twitter.com/RohitATamboli"><img src="../static/img/twitter.jpg" alt="Twitter"></a>
+         <a href="https://github.com/rohit1253"><img src="../static/img/github.jpg" alt="GitHub"></a>
+         <a href="https://stackoverflow.com/users/5115109/ratamboli"><img src="../static/img/stack.jpg" alt="StackOverFlow"></a>
+         <a href="https://www.linkedin.com/in/rohit-tamboli-94a97337"><img src="../static/img/linkedin.jpg" alt="LinkedIN"></a>-->
+        <!--<span class="text-muted">Place sticky footer content here.</span>-->
+      </div>
+      </div>
+    </footer>
+    </div>
+  </body>
+</html>
